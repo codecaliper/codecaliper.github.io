@@ -208,20 +208,40 @@ const topics = ['Homelab builds', 'Self-hosted apps', 'Kubernetes & Proxmox', 'T
   .topics {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin: 0 auto;
+    max-width: 24rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
 
   .topics li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
     font-size: 0.8rem;
-    padding: 0.25rem 0.7rem;
+    padding: 0.35rem 0.7rem;
     border: 1px solid var(--border);
-    border-radius: 999px;
+    border-radius: 0.6rem;
     color: var(--muted);
     background: var(--card);
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .topics li::before {
+    content: '';
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px rgb(var(--accent-rgb) / 0.6);
+  }
+
+  .topics li:hover {
+    color: var(--text);
+    border-color: rgb(var(--accent-rgb) / 0.5);
   }
 
   nav {
