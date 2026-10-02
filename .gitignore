@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# brand kit render deps
+brand/source/node_modules/
+brand/source/package*.json
+brand/source/.render.html
