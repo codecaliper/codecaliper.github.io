@@ -34,9 +34,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         try {
           theme = localStorage.getItem('theme');
         } catch {}
-        if (theme !== 'light' && theme !== 'dark') {
-          theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        }
+        if (theme !== 'light') theme = 'dark';
         document.documentElement.dataset.theme = theme;
         if (theme === 'light') document.querySelector('meta[name="theme-color"]').content = '#f6f8fa';
       })();
