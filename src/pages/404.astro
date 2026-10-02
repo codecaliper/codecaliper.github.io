@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="404 · CodeCaliper" description="Page not found." noindex>
+  <main>
+    <a href="/" aria-label="CodeCaliper home">
+      <img class="logo" src="/logo.png" alt="CodeCaliper logo" width="120" height="120" />
+    </a>
+    <div class="term" role="presentation">
+      <p><span class="prompt">guest@codecaliper:~$</span> cd <span id="path">this-page</span></p>
+      <p class="err">bash: cd: No such file or directory</p>
+      <p><span class="prompt">guest@codecaliper:~$</span> <span class="caret" aria-hidden="true"></span></p>
+    </div>
+    <h1>404: page not found</h1>
+    <p class="sub">This route doesn't exist. Not even in the homelab.</p>
+    <a class="home" href="/">← Back to codecaliper.uk</a>
+  </main>
+</Base>
+
+<script>
+  const path = document.getElementById('path');
+  if (path) path.textContent = decodeURIComponent(location.pathname);
+</script>
+
+<style>
+  main {
+    max-width: 34rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .logo {
+    display: block;
+    width: 7.5rem;
+    height: 7.5rem;
+    filter: drop-shadow(0 0 18px rgb(var(--accent-rgb) / 0.25));
+  }
+
+  .term {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+  }
+
+  .term p {
+    margin: 0.15rem 0;
+    word-break: break-all;
+  }
+
+  .prompt {
+    color: var(--accent);
+  }
+
+  .err {
+    color: #f87171;
+  }
+
+  .caret {
+    display: inline-block;
+    width: 0.55rem;
+    height: 1em;
+    vertical-align: text-bottom;
+    background: var(--accent);
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  h1 {
+    margin: 0.5rem 0 0;
+    font-size: 1.6rem;
+  }
+
+  .sub {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .home {
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.15s;
+  }
+
+  .home:hover,
+  .home:focus-visible {
+    background: rgb(var(--accent-rgb) / 0.12);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .caret {
+      animation: none;
+    }
+  }
+</style>
