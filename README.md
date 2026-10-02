@@ -9,3 +9,5 @@ npm run dev
 ```
 
 Edit links in `src/data/links.ts`.
+
+Brand assets (logo, icons, social images, fonts) live in [`brand/`](brand/).

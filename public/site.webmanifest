@@ -1,0 +1,13 @@
+{
+  "name": "CodeCaliper",
+  "short_name": "CodeCaliper",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0A192F",
+  "theme_color": "#0A192F",
+  "icons": [
+    { "src": "/android-chrome-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
